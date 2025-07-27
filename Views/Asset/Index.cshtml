@@ -1,0 +1,29 @@
+﻿@model IEnumerable<CarAssetApp.Models.Asset>
+
+@{
+    ViewData["Title"] = "Asset List";
+}
+
+<h2>Assets</h2>
+
+<a asp-action="Add" class="btn btn-primary mb-3">Add Asset</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Model Name</th>
+            <th>Price</th>
+            <th>Car Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var asset in Model)
+        {
+            <tr>
+                <td>@asset.ModelName</td>
+                <td>@asset.Price</td>
+                <td>@asset.CarNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>
